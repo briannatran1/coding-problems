@@ -15,7 +15,7 @@ You will only be given Natural Numbers as arguments.*/
 //iterate through n using for...loop
   //add 1 / denom to sum
   //add 3 to denominator each iteration
-//return sum as a decimal and then string
+//return sum as a decimal and string
 
 function SeriesSum(n){
   let sum = 0;
@@ -24,5 +24,5 @@ function SeriesSum(n){
     sum += 1 / denominator; //1 + 1/4 = 1.25
     denominator += 3; // 4
   }
-  return sum.toFixed(2).toString(); //'1.25'
+  return sum.toFixed(2); //'1.25'
 }
