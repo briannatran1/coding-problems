@@ -27,14 +27,29 @@ function replaceLetters(word) {
   const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   const consonants = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
   const vowels = ['a','e','i','o','u'];
-  let result = '';
-  for(let i = 0; i < word.length; i++){
-    if(vowels.includes(word[i])){
-      let j = alphabet[word[i]] - 1;
-      while()
-    }
-    else{
-      
-    }
-  }
+
+  return word
+    .split('')
+    .map((char) => {
+      if(vowels.includes(char)) {
+        let index = alphabet.indexOf(char);
+        while (true) {
+          index = (index - 1 + alphabet.length) % alphabet.length;
+          if (consonants.includes(alphabet[index])) {
+            return alphabet[index];
+          }
+        }
+      } else if (consonants.includes(char)) {
+        let index = alphabet.indexOf(char);
+        while (true) {
+          index = (index + 1) % alphabet.length;
+          if (vowels.includes(alphabet[index])) {
+            return alphabet[index];
+          }
+        }
+      } else {
+        return char;
+      }
+    })
+    .join('');
 }
