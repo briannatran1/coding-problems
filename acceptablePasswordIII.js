@@ -30,11 +30,17 @@ function isAcceptablePassword(password){
     let hasDigit = false;
     let nonDigit = false;
     for(let char of password){
-        if(!isNaN(Number(char))){
+        if(!isNaN(parseInt(char))){
             hasDigit = true;
         }
-        else{
+        else if(char >= 'a' && char <= 'z'){
             nonDigit = true;
+        }
+        else if(char >= 'A' && char <= 'Z'){
+            nonDigit = true;
+        }
+        if(hasDigit && nonDigit){
+            break;
         }
     }
     return minLength && hasDigit && nonDigit;
