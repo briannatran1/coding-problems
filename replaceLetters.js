@@ -16,12 +16,19 @@ const consonants = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s',
 const vowels = ['a','e','i','o','u'];
 P.S. You work with lowercase letters only.*/
 
-//declare new str var
-//iterate through word using for... loop
-  //if char is a vowel,
-    //find vowel in alphabet, and subtract 1 to the index
-  //else,
-    //
+//return modified str 
+  //split word into arr
+  //iterate through char using map
+    //if char is a vowel,
+      //find index of char in alphabet arr
+      //then, enter a while loop and search for nearest left consonant
+    //else if, char is a consonant,
+      //find index of char in alphabet arr
+      //enter while loop,
+        //search for nearest right vowel
+    //else char is not a letter,
+      //return vowel
+  //join arr back into str
 
 function replaceLetters(word) {
   const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
