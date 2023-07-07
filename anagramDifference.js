@@ -16,9 +16,9 @@ Result : 10*/
   //add remaining letters to removalCount
 //return removalCount
 
-function anagramDifference(w1,w2){
-  let count1 = getLetterCount(w1);
-  let count2 = getLetterCount(w2);
+function anagramDifference(w1,w2){ //codewars, hackerrank
+  let count1 = getLetterCount(w1); // {c: 1, o: 1, d: 1, e: 1, w: 1, a: 1, r: 1, s: 1}
+  let count2 = getLetterCount(w2); // {h: 1, a: 2, c: 1, k: 2, e: 1, r: 2, n: 1}
   let removalCount = 0;
   for(let char in count1){
     if(!(char in count2)){
