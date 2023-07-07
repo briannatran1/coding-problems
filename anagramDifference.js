@@ -11,7 +11,19 @@ function anagramDifference(w1,w2){
   let count1 = getLetterCount(w1);
   let count2 = getLetterCount(w2);
   let removalCount = 0;
-  
+  for(let char in count1){
+    if(!(char in count2)){
+      removalCount += count1[char];
+    }
+    else{
+      removalCount += Math.abs(count1[char] - count2[char]);
+      delete count2[char];
+    }
+  }
+  for(let char in count2){
+    removalCount += count2[char];
+  }
+  return removalCount;
 }
 
 function getLetterCount(word){
