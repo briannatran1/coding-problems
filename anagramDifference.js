@@ -22,17 +22,17 @@ function anagramDifference(w1,w2){ //codewars, hackerrank
   let removalCount = 0;
   for(let char in count1){
     if(!(char in count2)){
-      removalCount += count1[char];
+      removalCount += count1[char]; //4
     }
     else{
-      removalCount += Math.abs(count1[char] - count2[char]);
-      delete count2[char];
+      removalCount += Math.abs(count1[char] - count2[char]); //0 + 0 + 1 + 1 = 2
+      delete count2[char]; // {h: 1, a: 0, c: 0, k: 2, e: 0, r: 0, n: 1}
     }
   }
   for(let char in count2){
-    removalCount += count2[char];
+    removalCount += count2[char]; // 1 + 2 + 1 = 4
   }
-  return removalCount;
+  return removalCount; //4 + 2 + 4 = 10
 }
 
 function getLetterCount(word){
